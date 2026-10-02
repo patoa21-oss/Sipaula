@@ -1,0 +1,3719 @@
+:root {
+  --blue-1: #061a33;
+  --blue-2: #082d52;
+  --blue-3: #0b4775;
+  --blue-4: #0e6594;
+
+  --cyan: #38bdf8;
+  --cyan-soft: #67e8f9;
+
+  --white: #f8fafc;
+  --muted: #a9bfd5;
+
+  --card: rgba(255,255,255,.075);
+  --card-strong: rgba(255,255,255,.11);
+  --border: rgba(255,255,255,.13);
+
+  --success: #22c55e;
+  --danger: #ef4444;
+
+  --shadow: 0 18px 45px rgba(0,0,0,.25);
+}
+
+
+/* =========================================================
+   RESET
+   ========================================================= */
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100%;
+
+  font-family: 'Poppins', Arial, sans-serif;
+
+  background:
+    radial-gradient(
+      circle at 85% 10%,
+      rgba(56,189,248,.16),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at 10% 90%,
+      rgba(14,165,233,.10),
+      transparent 30%
+    ),
+    linear-gradient(
+      135deg,
+      #061a33 0%,
+      #082746 48%,
+      #061a33 100%
+    );
+
+  color: var(--white);
+}
+
+body {
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+button,
+input,
+select,
+textarea {
+  font-family: inherit;
+}
+
+
+/* =========================================================
+   APP
+   ========================================================= */
+
+.app {
+  width: 100%;
+  min-height: 100vh;
+  padding: 20px;
+  position: relative;
+}
+
+
+/* =========================================================
+   PAGE
+   ========================================================= */
+
+.page {
+  display: none;
+  width: 100%;
+  max-width: none;
+  margin: 0 auto;
+  min-height: calc(100vh - 40px);
+}
+
+.page.active {
+  display: block;
+}
+
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 22px;
+}
+
+.logo {
+  width: 58px;
+  height: 58px;
+  flex: 0 0 58px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 28px;
+
+  border-radius: 18px;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(56,189,248,.27),
+      rgba(14,165,233,.07)
+    );
+
+  border: 1px solid rgba(103,232,249,.25);
+
+  box-shadow:
+    0 10px 30px rgba(0,0,0,.25),
+    inset 0 1px 0 rgba(255,255,255,.08);
+}
+
+.brand {
+  min-width: 0;
+}
+
+.brand h1 {
+  margin: 0;
+  font-size: 23px;
+  font-weight: 800;
+  letter-spacing: .4px;
+}
+
+.brand p {
+  margin: 2px 0 0;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.badge {
+  margin-left: auto;
+
+  padding: 6px 12px;
+
+  border-radius: 999px;
+
+  background: rgba(56,189,248,.10);
+  border: 1px solid rgba(56,189,248,.25);
+
+  color: var(--cyan-soft);
+
+  font-size: 11px;
+  font-weight: 700;
+
+  white-space: nowrap;
+}
+
+
+/* =========================================================
+   HERO DASHBOARD
+   ========================================================= */
+
+.hero {
+  position: relative;
+  overflow: hidden;
+
+  padding: 30px;
+
+  border-radius: 28px;
+
+  background:
+    radial-gradient(
+      circle at 90% 10%,
+      rgba(56,189,248,.18),
+      transparent 35%
+    ),
+    linear-gradient(
+      145deg,
+      rgba(14,79,130,.92),
+      rgba(6,26,51,.94)
+    );
+
+  border: 1px solid var(--border);
+
+  box-shadow: var(--shadow);
+
+  margin-bottom: 22px;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+
+  width: 170px;
+  height: 170px;
+
+  right: -70px;
+  bottom: -80px;
+
+  border-radius: 50%;
+
+  border: 1px solid rgba(103,232,249,.16);
+
+  box-shadow:
+    0 0 0 25px rgba(103,232,249,.025),
+    0 0 0 50px rgba(103,232,249,.015);
+
+  pointer-events: none;
+}
+
+.hero-small {
+  position: relative;
+  z-index: 1;
+
+  display: inline-flex;
+
+  padding: 6px 11px;
+
+  border-radius: 999px;
+
+  background: rgba(255,255,255,.08);
+  border: 1px solid rgba(255,255,255,.12);
+
+  color: var(--cyan-soft);
+
+  font-size: 10px;
+  font-weight: 700;
+
+  letter-spacing: .7px;
+
+  margin-bottom: 14px;
+}
+
+.hero h2 {
+  position: relative;
+  z-index: 1;
+
+  margin: 0;
+
+  font-size: clamp(28px, 5vw, 42px);
+  line-height: 1.12;
+
+  font-weight: 800;
+  letter-spacing: -.7px;
+}
+
+.hero p {
+  position: relative;
+  z-index: 1;
+
+  max-width: 650px;
+
+  margin: 15px 0 22px;
+
+  color: var(--muted);
+
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+
+/* =========================================================
+   PRIMARY BUTTON
+   ========================================================= */
+
+.primary {
+  position: relative;
+  z-index: 2;
+
+  border: 0;
+
+  padding: 13px 19px;
+
+  border-radius: 14px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #38bdf8,
+      #0ea5e9
+    );
+
+  color: #06203b;
+
+  font-size: 12px;
+  font-weight: 800;
+
+  letter-spacing: .2px;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 10px 25px rgba(14,165,233,.25);
+
+  transition:
+    transform .18s ease,
+    box-shadow .18s ease,
+    filter .18s ease;
+}
+
+.primary:hover {
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 14px 30px rgba(14,165,233,.35);
+
+  filter: brightness(1.05);
+}
+
+.primary:active {
+  transform: translateY(0);
+}
+
+
+/* =========================================================
+   SECTION TITLE
+   ========================================================= */
+
+.section-title {
+  margin: 22px 2px 12px;
+
+  font-size: 13px;
+  font-weight: 700;
+
+  color: #dceeff;
+
+  letter-spacing: .2px;
+}
+
+
+/* =========================================================
+   STATISTICS
+   ========================================================= */
+
+.stats {
+  display: grid;
+
+  grid-template-columns:
+    repeat(4, minmax(0, 1fr));
+
+  gap: 12px;
+}
+
+.stat {
+  position: relative;
+
+  min-height: 130px;
+
+  padding: 16px;
+
+  border-radius: 20px;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255,255,255,.095),
+      rgba(255,255,255,.045)
+    );
+
+  border: 1px solid var(--border);
+
+  box-shadow:
+    0 10px 28px rgba(0,0,0,.14);
+
+  overflow: hidden;
+}
+
+.stat::after {
+  content: "";
+
+  position: absolute;
+
+  width: 70px;
+  height: 70px;
+
+  right: -28px;
+  bottom: -30px;
+
+  border-radius: 50%;
+
+  background: rgba(56,189,248,.07);
+}
+
+.stat-icon {
+  font-size: 20px;
+
+  width: 40px;
+  height: 40px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 13px;
+
+  background: rgba(56,189,248,.10);
+
+  border: 1px solid rgba(56,189,248,.12);
+
+  margin-bottom: 10px;
+}
+
+.stat-number {
+  font-size: 24px;
+  line-height: 1;
+
+  font-weight: 800;
+
+  color: #ffffff;
+}
+
+.stat-label {
+  margin-top: 6px;
+
+  font-size: 11px;
+
+  color: var(--muted);
+}
+
+
+/* =========================================================
+   MENU
+   ========================================================= */
+
+.menu {
+  display: grid;
+
+  grid-template-columns:
+    repeat(4, minmax(0, 1fr));
+
+  gap: 12px;
+
+  margin-bottom: 25px;
+}
+
+.menu-item {
+  position: relative;
+
+  min-height: 110px;
+
+  padding: 16px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: center;
+
+  gap: 3px;
+
+  border-radius: 20px;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255,255,255,.09),
+      rgba(255,255,255,.045)
+    );
+
+  border: 1px solid var(--border);
+
+  color: var(--white);
+
+  text-decoration: none;
+
+  box-shadow:
+    0 10px 25px rgba(0,0,0,.13);
+
+  transition:
+    transform .18s ease,
+    background .18s ease,
+    border-color .18s ease,
+    box-shadow .18s ease;
+
+  cursor: pointer;
+}
+
+.menu-item:hover {
+  transform: translateY(-3px);
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(56,189,248,.15),
+      rgba(255,255,255,.055)
+    );
+
+  border-color:
+    rgba(103,232,249,.28);
+
+  box-shadow:
+    0 15px 30px rgba(0,0,0,.20);
+}
+
+.menu-item:active {
+  transform: scale(.98);
+}
+
+.menu-item span {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  width: 40px;
+  height: 40px;
+
+  border-radius: 13px;
+
+  background: rgba(56,189,248,.10);
+
+  border: 1px solid rgba(56,189,248,.12);
+
+  font-size: 20px;
+
+  margin-bottom: 7px;
+}
+
+.menu-item strong {
+  display: block;
+
+  font-size: 13px;
+
+  font-weight: 700;
+
+  color: #ffffff;
+}
+
+.menu-item small {
+  display: block;
+
+  font-size: 10px;
+
+  color: var(--muted);
+
+  margin-top: 1px;
+}
+
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+.footer {
+  margin-top: 25px;
+  padding: 18px 5px 10px;
+
+  text-align: center;
+
+  color: var(--muted);
+
+  line-height: 1.5;
+
+  border-top:
+    1px solid rgba(255,255,255,.08);
+}
+
+
+/* =========================================================
+   SIPAULA — FORM CARD MOBILE PREMIUM
+   ========================================================= */
+
+.form-card {
+  width: 100%;
+  padding: 24px 22px 28px;
+  border-radius: 26px;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(8, 77, 150, .60),
+      rgba(3, 40, 91, .72)
+    );
+
+  border: 1px solid rgba(91, 211, 255, .28);
+
+  box-shadow:
+    0 18px 45px rgba(0,0,0,.28),
+    inset 0 1px 0 rgba(255,255,255,.10);
+
+  backdrop-filter: blur(7px);
+  -webkit-backdrop-filter: blur(7px);
+}
+
+
+/* =========================================================
+   JUDUL
+   ========================================================= */
+
+.form-title {
+  margin-bottom: 20px;
+
+  font-size: 22px;
+  line-height: 1.2;
+  font-weight: 800;
+
+  color: #ffffff;
+
+  text-shadow:
+    0 2px 10px rgba(0,0,0,.30);
+}
+
+
+/* =========================================================
+   FIELD
+   ========================================================= */
+
+.field {
+  margin-bottom: 18px;
+}
+
+.field label {
+  display: block;
+
+  margin-bottom: 8px;
+
+  color: #ffffff;
+
+  font-size: 13px;
+  font-weight: 700;
+}
+
+
+/* =========================================================
+   INPUT
+   ========================================================= */
+
+.field input,
+.field select,
+.field textarea {
+
+  width: 100%;
+
+  min-height: 50px;
+
+  padding: 14px 15px;
+
+  border:
+    1px solid rgba(110,220,255,.25);
+
+  border-radius: 15px;
+
+  outline: none;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(4,66,132,.72),
+      rgba(2,43,92,.72)
+    );
+
+  color: #ffffff;
+
+  font-size: 16px;
+
+  box-shadow:
+    inset 0 1px 2px rgba(0,0,0,.12),
+    0 5px 15px rgba(0,0,0,.10);
+
+  transition:
+    border-color .18s ease,
+    box-shadow .18s ease,
+    transform .18s ease;
+}
+
+
+.field input:focus,
+.field select:focus,
+.field textarea:focus {
+
+  border-color:
+    rgba(56,211,255,.80);
+
+  box-shadow:
+    0 0 0 3px rgba(56,211,255,.10),
+    0 8px 20px rgba(0,0,0,.15);
+}
+
+
+.field textarea {
+
+  min-height: 105px;
+
+  resize: vertical;
+}
+
+
+.field select option {
+
+  background: #082746;
+
+  color: #ffffff;
+}
+
+
+/* =========================================================
+   MOBILE PREMIUM
+   ========================================================= */
+
+@media (max-width: 650px) {
+
+  .form-card {
+
+    margin: 0 10px 22px;
+
+    padding:
+      20px
+      14px
+      26px;
+
+    border-radius: 22px;
+
+  }
+
+
+  .form-title {
+
+    font-size: 21px;
+
+  }
+
+
+  .field {
+
+    margin-bottom: 17px;
+
+  }
+
+
+  .field input,
+  .field select,
+  .field textarea {
+
+    min-height: 52px;
+
+    font-size: 16px;
+
+    border-radius: 14px;
+
+  }
+
+
+  .field textarea {
+
+    min-height: 105px;
+
+  }
+
+}
+
+
+/* =========================================================
+   SIMPAN KEGIATAN
+   Menarget tombol di dalam form-card,
+   tanpa menyentuh tombol kembali
+   ========================================================= */
+
+.form-card button:not(.back) {
+
+  width: 100%;
+
+  min-height: 62px;
+
+  margin-top: 10px;
+
+  padding: 15px 20px;
+
+  border: none;
+
+  border-radius: 18px;
+
+  background:
+    linear-gradient(
+      100deg,
+      #19d5ff 0%,
+      #129cf5 50%,
+      #0878ef 100%
+    );
+
+  color: #ffffff;
+
+  font-size: 16px;
+
+  font-weight: 800;
+
+  letter-spacing: .3px;
+
+  box-shadow:
+    0 10px 28px rgba(0,174,255,.30),
+    inset 0 1px 0 rgba(255,255,255,.30);
+
+  cursor: pointer;
+
+  transition:
+    transform .15s ease,
+    box-shadow .15s ease;
+}
+
+
+.form-card button:not(.back):active {
+
+  transform: scale(.98);
+
+  box-shadow:
+    0 5px 15px rgba(0,174,255,.20);
+
+}
+
+
+/* =========================================================
+   AREA INFORMASI DI BAWAH TOMBOL
+   ========================================================= */
+
+.form-card::after {
+
+  content:
+    "🔒  Data kegiatan tersimpan dengan aman  •  SIPAULA KHD";
+
+  display: block;
+
+  margin-top: 16px;
+
+  padding-top: 13px;
+
+  border-top:
+    1px solid rgba(91,211,255,.18);
+
+  text-align: center;
+
+  color:
+    rgba(213,242,255,.82);
+
+  font-size: 10px;
+
+  font-weight: 600;
+
+  line-height: 1.5;
+
+  letter-spacing: .2px;
+
+}
+
+
+/* =========================================================
+   MOBILE BUTTON
+   ========================================================= */
+
+@media (max-width: 650px) {
+
+  .form-card button:not(.back) {
+
+    min-height: 60px;
+
+    margin-top: 8px;
+
+    border-radius: 17px;
+
+    font-size: 16px;
+
+  }
+
+
+  .form-card::after {
+
+    margin-top: 14px;
+
+    padding-bottom: 4px;
+
+  }
+
+}
+
+/* =========================================================
+   BACK BUTTON
+   ========================================================= */
+
+.back {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 6px;
+
+  margin-bottom: 15px;
+
+  padding: 9px 13px;
+
+  border: 1px solid rgba(255,255,255,.12);
+
+  border-radius: 12px;
+
+  background: rgba(255,255,255,.06);
+
+  color: #dceeff;
+
+  font-family: inherit;
+
+  font-size: 11px;
+  font-weight: 600;
+
+  cursor: pointer;
+}
+
+.back:hover {
+  background: rgba(255,255,255,.10);
+}
+
+
+/* =========================================================
+   LOADING
+   ========================================================= */
+
+.loading {
+  margin-top: 15px;
+
+  padding: 13px;
+
+  border-radius: 13px;
+
+  background: rgba(56,189,248,.08);
+
+  border: 1px solid rgba(56,189,248,.12);
+
+  color: var(--cyan-soft);
+
+  text-align: center;
+
+  font-size: 12px;
+}
+
+
+/* =========================================================
+   MESSAGE
+   ========================================================= */
+
+.message {
+  margin-top: 15px;
+
+  padding: 13px;
+
+  border-radius: 13px;
+
+  background: rgba(255,255,255,.06);
+
+  border: 1px solid rgba(255,255,255,.10);
+
+  color: #e5f3ff;
+
+  font-size: 12px;
+
+  line-height: 1.6;
+}
+
+
+/* =========================================================
+   MOBILE APP
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+  html,
+  body {
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+
+  .app {
+    min-height: 100dvh;
+    height: auto;
+    padding: 12px;
+    overflow: visible;
+  }
+
+  .page {
+    min-height: auto;
+  }
+
+  .header {
+    margin-bottom: 14px;
+    gap: 11px;
+  }
+
+  .logo {
+    width: 48px;
+    height: 48px;
+    flex-basis: 48px;
+    border-radius: 15px;
+    font-size: 23px;
+  }
+
+  .brand h1 {
+    font-size: 18px;
+  }
+
+  .brand p {
+    font-size: 9px;
+  }
+
+  .badge {
+    padding: 5px 9px;
+    font-size: 9px;
+  }
+
+  .hero {
+    padding: 20px;
+    border-radius: 21px;
+    margin-bottom: 18px;
+  }
+
+  .hero-small {
+    font-size: 8px;
+    padding: 5px 9px;
+    margin-bottom: 11px;
+  }
+
+  .hero h2 {
+    font-size: 27px;
+    line-height: 1.12;
+    letter-spacing: -.5px;
+  }
+
+  .hero p {
+    margin: 12px 0 17px;
+    font-size: 10px;
+    line-height: 1.6;
+  }
+
+  .primary {
+    padding: 11px 15px;
+    border-radius: 12px;
+    font-size: 10px;
+  }
+
+  .section-title {
+    margin: 17px 2px 9px;
+    font-size: 12px;
+  }
+
+  .stats {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+
+    gap: 9px;
+  }
+
+  .stat {
+    min-height: 105px;
+    padding: 13px;
+    border-radius: 16px;
+  }
+
+  .stat-icon {
+    width: 34px;
+    height: 34px;
+    border-radius: 11px;
+    font-size: 16px;
+    margin-bottom: 7px;
+  }
+
+  .stat-number {
+    font-size: 20px;
+  }
+
+  .stat-label {
+    margin-top: 4px;
+    font-size: 9px;
+  }
+
+  .menu {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+
+    gap: 9px;
+    margin-bottom: 17px;
+  }
+
+  .menu-item {
+    min-height: 105px;
+    padding: 13px;
+    border-radius: 16px;
+  }
+
+  .menu-item span {
+    width: 34px;
+    height: 34px;
+    border-radius: 11px;
+    font-size: 16px;
+    margin-bottom: 6px;
+  }
+
+  .menu-item strong {
+    font-size: 11px;
+  }
+
+  .menu-item small {
+    font-size: 8px;
+  }
+
+  .footer {
+    margin-top: 14px;
+    padding: 14px 5px 8px;
+  }
+
+  .form-card {
+    padding: 17px;
+    border-radius: 19px;
+  }
+}
+
+
+/* =========================================================
+   SMALL PHONE
+   ========================================================= */
+
+@media (max-width: 390px) {
+
+  .app {
+    padding: 10px;
+  }
+
+  .hero {
+    padding: 18px;
+  }
+
+  .hero h2 {
+    font-size: 24px;
+  }
+
+  .hero p {
+    font-size: 9px;
+  }
+
+  .primary {
+    width: auto;
+  }
+
+  .stat {
+    min-height: 100px;
+  }
+
+  .stat-number {
+    font-size: 19px;
+  }
+
+  .menu-item {
+    min-height: 100px;
+  }
+}
+
+
+/* =========================================================
+   DESKTOP
+   ========================================================= */
+
+@media (min-width: 1000px) {
+
+  html,
+  body {
+    overflow: hidden;
+  }
+
+  .app {
+    height: 100dvh;
+    min-height: 100dvh;
+    padding: 28px;
+    overflow: hidden;
+  }
+
+  .page {
+    max-width: none;
+  }
+
+  .hero {
+    padding: 38px;
+  }
+
+  .hero h2 {
+    font-size: 44px;
+  }
+
+  .hero p {
+    font-size: 14px;
+    max-width: 700px;
+  }
+
+  .stat {
+    min-height: 145px;
+  }
+
+  .menu-item {
+    min-height: 125px;
+  }
+}
+
+
+/* =========================================================
+   FORM TWO COLUMN
+   ========================================================= */
+
+.two {
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap: 12px;
+}
+
+.two .field {
+  min-width: 0;
+}
+
+/* =========================================================
+   SIPAULA — DOKUMENTASI HERO
+   ========================================================= */
+
+#dokumentasiPage {
+  width: 100%;
+  max-width: none;
+}
+
+
+/* =========================================================
+   HERO PELAYANAN
+   ========================================================= */
+
+.doc-service {
+  position: relative;
+
+  overflow: hidden;
+
+  width: 100%;
+  min-height: 430px;
+
+  margin-top: 4px;
+  margin-bottom: 20px;
+
+  padding: 0;
+
+  border-radius: 28px;
+
+  background:
+    radial-gradient(
+      circle at 15% 30%,
+      rgba(39,195,255,.26),
+      transparent 34%
+    ),
+    radial-gradient(
+      circle at 85% 80%,
+      rgba(18,132,211,.18),
+      transparent 32%
+    ),
+    linear-gradient(
+      145deg,
+      #0b5488 0%,
+      #073962 46%,
+      #041d37 100%
+    );
+
+  border: 1px solid rgba(75,201,255,.30);
+
+  box-shadow:
+    0 20px 55px rgba(0,0,0,.28);
+}
+
+.doc-service::before {
+  content: "";
+
+  position: absolute;
+
+  width: 420px;
+  height: 420px;
+
+  right: -190px;
+  bottom: -220px;
+
+  border-radius: 50%;
+
+  border: 1px solid rgba(103,232,249,.13);
+
+  box-shadow:
+    0 0 0 28px rgba(103,232,249,.025),
+    0 0 0 60px rgba(103,232,249,.018);
+
+  pointer-events: none;
+}
+
+.doc-service::after {
+  content: "";
+
+  position: absolute;
+
+  width: 230px;
+  height: 230px;
+
+  left: -140px;
+  top: -130px;
+
+  border-radius: 50%;
+
+  background:
+    rgba(56,189,248,.08);
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   HERO LAYOUT
+   ========================================================= */
+
+.doc-hero {
+  position: relative;
+
+  z-index: 2;
+
+  display: grid;
+
+  grid-template-columns:
+    42% 58%;
+
+  align-items: center;
+
+  width: 100%;
+  min-height: 430px;
+}
+
+
+/* =========================================================
+   MASKOT
+   ========================================================= */
+
+.doc-mascot {
+  position: relative;
+
+  display: flex;
+
+  align-items: flex-end;
+  justify-content: center;
+
+  width: 100%;
+  min-height: 430px;
+
+  overflow: hidden;
+
+  background: transparent;
+
+  border: 0;
+
+  box-shadow: none;
+
+  z-index: 3;
+}
+
+.doc-mascot::after {
+  content: "";
+
+  position: absolute;
+
+  width: 300px;
+  height: 65px;
+
+  bottom: -28px;
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  border-radius: 50%;
+
+  background:
+    rgba(0,0,0,.20);
+
+  filter: blur(16px);
+
+  pointer-events: none;
+}
+
+.doc-mascot img {
+  position: relative;
+
+  z-index: 4;
+
+  display: block;
+
+  width: 430px;
+  max-width: 100%;
+
+  height: 430px;
+
+  object-fit: contain;
+
+  object-position:
+    center bottom;
+
+  background: transparent;
+
+  border: 0;
+
+  box-shadow: none;
+
+  filter:
+    drop-shadow(
+      0 18px 20px rgba(0,0,0,.24)
+    );
+}
+
+
+/* =========================================================
+   HERO TEXT
+   ========================================================= */
+
+.doc-hero-content {
+  position: relative;
+
+  z-index: 5;
+
+  display: block;
+
+  align-self: center;
+
+  width: 100%;
+
+  max-width: 650px;
+
+  padding:
+    42px 48px 42px 18px;
+
+  color: #ffffff;
+}
+
+.doc-eyebrow {
+  display: inline-flex;
+
+  align-items: center;
+
+  padding:
+    7px 13px;
+
+  margin-bottom: 17px;
+
+  border-radius: 999px;
+
+  background:
+    rgba(255,255,255,.09);
+
+  border:
+    1px solid rgba(103,232,249,.22);
+
+  color:
+    var(--cyan-soft);
+
+  font-size: 10px;
+
+  font-weight: 800;
+
+  letter-spacing:
+    .8px;
+}
+
+.doc-hero-content h1 {
+  display: block;
+
+  margin: 0;
+
+  color: #ffffff;
+
+  font-size:
+    clamp(27px, 3.5vw, 42px);
+
+  line-height: 1.13;
+
+  font-weight: 800;
+
+  letter-spacing: -.8px;
+}
+
+.doc-hero-content h1 span {
+  display: block;
+
+  margin-top: 5px;
+
+  color:
+    var(--cyan-soft);
+}
+
+.doc-hero-content > p {
+  display: block;
+
+  max-width: 550px;
+
+  margin:
+    17px 0 18px;
+
+  color:
+    rgba(235,247,255,.82);
+
+  font-size: 13px;
+
+  line-height: 1.7;
+}
+
+
+/* =========================================================
+   SERVICE TITLE
+   ========================================================= */
+
+.doc-service-title {
+  margin:
+    13px 0 16px;
+
+  color: #ffffff;
+
+  font-size: 17px;
+
+  font-weight: 800;
+
+  letter-spacing: .2px;
+}
+
+
+/* =========================================================
+   SERVICE VALUES
+   ========================================================= */
+
+.doc-values {
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap: 9px;
+
+  width: 100%;
+  max-width: 570px;
+}
+
+.doc-value {
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  min-height: 62px;
+
+  padding:
+    10px 12px;
+
+  border-radius: 14px;
+
+  background:
+    rgba(2,30,57,.50);
+
+  border:
+    1px solid rgba(62,190,255,.26);
+
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.035);
+}
+
+.doc-value > span {
+  width: 34px;
+  height: 34px;
+
+  flex:
+    0 0 34px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 10px;
+
+  background:
+    rgba(35,190,255,.13);
+
+  font-size: 18px;
+}
+
+.doc-value b,
+.doc-value small {
+  display: block;
+}
+
+.doc-value b {
+  color: #ffffff;
+
+  font-size: 11px;
+
+  font-weight: 700;
+}
+
+.doc-value small {
+  margin-top: 2px;
+
+  color:
+    rgba(224,243,255,.62);
+
+  font-size: 8px;
+
+  line-height: 1.3;
+}
+
+
+/* =========================================================
+   QUOTE
+   ========================================================= */
+
+.doc-quote {
+  margin-top: 17px;
+
+  color:
+    rgba(255,255,255,.85);
+
+  font-size: 13px;
+
+  font-weight: 600;
+
+  font-style: italic;
+}
+
+
+/* =========================================================
+   MAIN FORM
+   ========================================================= */
+
+.doc-main {
+  position: relative;
+
+  min-width: 0;
+
+  padding: 30px;
+
+  border-radius: 25px;
+
+  background:
+    rgba(255,255,255,.97);
+
+  color:
+    #123b61;
+
+  box-shadow:
+    0 20px 50px rgba(0,0,0,.20);
+}
+
+.doc-heading {
+  display: flex;
+
+  align-items: center;
+
+  gap: 15px;
+
+  margin-bottom: 27px;
+}
+
+.doc-icon {
+  flex:
+    0 0 58px;
+
+  width: 58px;
+  height: 58px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 17px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #18baf4,
+      #0876db
+    );
+
+  color: #ffffff;
+
+  font-size: 28px;
+
+  box-shadow:
+    0 10px 25px
+    rgba(0,140,230,.25);
+}
+
+.doc-heading h2 {
+  margin: 0;
+
+  color:
+    #07519b;
+
+  font-size: 27px;
+
+  font-weight: 800;
+}
+
+.doc-heading p {
+  margin:
+    4px 0 0;
+
+  color:
+    #6a8298;
+
+  font-size: 12px;
+
+  line-height: 1.5;
+}
+
+
+/* =========================================================
+   STEP
+   ========================================================= */
+
+.doc-step {
+  margin-bottom: 23px;
+}
+
+.doc-step-title {
+  display: flex;
+
+  align-items: center;
+
+  gap: 9px;
+
+  margin-bottom: 9px;
+
+  color:
+    #124c80;
+
+  font-size: 14px;
+
+  font-weight: 700;
+}
+
+.doc-step-title span {
+  width: 29px;
+  height: 29px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background:
+    #087bd8;
+
+  color:
+    #ffffff;
+
+  font-size: 12px;
+
+  font-weight: 800;
+}
+
+.doc-step-title i {
+  color:
+    #e33;
+
+  font-style:
+    normal;
+}
+
+
+/* =========================================================
+   SELECT
+   ========================================================= */
+
+.doc-main select {
+  width: 100%;
+
+  min-height: 53px;
+
+  padding:
+    12px 14px;
+
+  border:
+    1px solid #c9dbea;
+
+  border-radius:
+    14px;
+
+  background:
+    #ffffff;
+
+  color:
+    #173f64;
+
+  font-family:
+    Poppins,
+    sans-serif;
+
+  font-size:
+    13px;
+
+  outline:
+    none;
+}
+
+.doc-main select:focus {
+  border-color:
+    #16aeea;
+
+  box-shadow:
+    0 0 0 3px
+    rgba(22,174,234,.12);
+}
+
+
+/* =========================================================
+   TYPE
+   ========================================================= */
+
+.doc-type-grid {
+  display: grid;
+
+  grid-template-columns:
+    1fr 1fr;
+
+  gap: 12px;
+}
+
+.doc-type {
+  position: relative;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  min-height: 88px;
+
+  padding:
+    14px;
+
+  border:
+    1px solid #d2dfeb;
+
+  border-radius:
+    16px;
+
+  background:
+    #ffffff;
+
+  color:
+    #17466e;
+
+  text-align:
+    left;
+
+  cursor:
+    pointer;
+
+  transition:
+    .18s ease;
+}
+
+.doc-type:hover {
+  border-color:
+    #72c9ee;
+
+  background:
+    #f7fcff;
+}
+
+.doc-type.active {
+  border:
+    2px solid #079de9;
+
+  background:
+    #f0faff;
+}
+
+.doc-type > strong {
+  width: 48px;
+  height: 48px;
+
+  flex:
+    0 0 48px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius:
+    50%;
+
+  background:
+    #e5f3fd;
+
+  font-size:
+    23px;
+}
+
+.doc-type b,
+.doc-type small {
+  display:
+    block;
+}
+
+.doc-type b {
+  font-size:
+    13px;
+}
+
+.doc-type small {
+  margin-top:
+    4px;
+
+  color:
+    #71889b;
+
+  font-size:
+    9px;
+
+  line-height:
+    1.4;
+}
+
+.doc-type em {
+  position:
+    absolute;
+
+  top:
+    10px;
+
+  right:
+    10px;
+
+  width:
+    19px;
+
+  height:
+    19px;
+
+  display:
+    none;
+
+  align-items:
+    center;
+
+  justify-content:
+    center;
+
+  border-radius:
+    50%;
+
+  background:
+    #087fe0;
+
+  color:
+    #ffffff;
+
+  font-style:
+    normal;
+
+  font-size:
+    10px;
+}
+
+.doc-type.active em {
+  display:
+    flex;
+}
+
+.doc-hidden-select {
+  display:
+    none !important;
+}
+
+
+/* =========================================================
+   FILE
+   ========================================================= */
+
+.doc-file-box {
+  display:
+    flex;
+
+  align-items:
+    center;
+
+  justify-content:
+    space-between;
+
+  gap:
+    15px;
+
+  padding:
+    15px;
+
+  border:
+    1px dashed #36aee9;
+
+  border-radius:
+    17px;
+
+  background:
+    #f6fbff;
+}
+
+.doc-file-info {
+  display:
+    flex;
+
+  align-items:
+    center;
+
+  gap:
+    11px;
+
+  min-width:
+    0;
+}
+
+.doc-file-icon {
+  width:
+    47px;
+
+  height:
+    47px;
+
+  flex:
+    0 0 47px;
+
+  display:
+    flex;
+
+  align-items:
+    center;
+
+  justify-content:
+    center;
+
+  border-radius:
+    50%;
+
+  background:
+    #e2f2fc;
+
+  font-size:
+    21px;
+}
+
+.doc-file-info b,
+.doc-file-info small {
+  display:
+    block;
+
+  overflow:
+    hidden;
+
+  text-overflow:
+    ellipsis;
+
+  white-space:
+    nowrap;
+}
+
+.doc-file-info b {
+  color:
+    #173f64;
+
+  font-size:
+    12px;
+}
+
+.doc-file-info small {
+  margin-top:
+    4px;
+
+  color:
+    #71889b;
+
+  font-size:
+    10px;
+}
+
+.doc-file-button {
+  flex:
+    0 0 auto;
+
+  padding:
+    12px 18px;
+
+  border-radius:
+    12px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #0b9eea,
+      #0879df
+    );
+
+  color:
+    #ffffff;
+
+  font-size:
+    11px;
+
+  font-weight:
+    700;
+
+  cursor:
+    pointer;
+}
+
+.doc-file-button input {
+  display:
+    none;
+}
+
+.doc-hidden-info {
+  display:
+    none;
+}
+
+.doc-format {
+  margin-top:
+    7px;
+
+  color:
+    #71889b;
+
+  font-size:
+    9px;
+}
+
+
+/* =========================================================
+   UPLOAD
+   ========================================================= */
+
+.doc-upload {
+  width:
+    100%;
+
+  min-height:
+    56px;
+
+  border:
+    0;
+
+  border-radius:
+    15px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #10b9ef,
+      #0879df
+    );
+
+  color:
+    #ffffff;
+
+  font-family:
+    Poppins,
+    sans-serif;
+
+  font-size:
+    14px;
+
+  font-weight:
+    800;
+
+  cursor:
+    pointer;
+
+  box-shadow:
+    0 10px 25px
+    rgba(0,130,225,.25);
+
+  transition:
+    .18s ease;
+}
+
+.doc-upload:hover {
+  transform:
+    translateY(-1px);
+
+  filter:
+    brightness(1.04);
+}
+
+.doc-upload:active {
+  transform:
+    scale(.99);
+}
+
+.doc-loading,
+.doc-message {
+  margin-top:
+    11px;
+}
+
+
+/* =========================================================
+   INFO
+   ========================================================= */
+
+.doc-info {
+  display:
+    flex;
+
+  align-items:
+    center;
+
+  gap:
+    11px;
+
+  margin-top:
+    17px;
+
+  padding:
+    13px 15px;
+
+  border-radius:
+    15px;
+
+  background:
+    #eaf6ff;
+
+  color:
+    #16629a;
+
+  font-size:
+    11px;
+
+  line-height:
+    1.5;
+}
+
+.doc-info > span {
+  font-size:
+    21px;
+}
+
+
+/* =========================================================
+   FOOTER VALUES
+   ========================================================= */
+
+.doc-footer-values {
+  display:
+    grid;
+
+  grid-template-columns:
+    repeat(4, 1fr);
+
+  margin-top:
+    17px;
+
+  border-radius:
+    18px;
+
+  background:
+    #ffffff;
+
+  overflow:
+    hidden;
+
+  box-shadow:
+    0 10px 30px
+    rgba(0,0,0,.12);
+}
+
+.doc-footer-values > div {
+  display:
+    grid;
+
+  grid-template-columns:
+    auto 1fr;
+
+  column-gap:
+    9px;
+
+  align-items:
+    center;
+
+  padding:
+    14px 17px;
+
+  border-right:
+    1px solid #e4edf4;
+}
+
+.doc-footer-values > div:last-child {
+  border-right:
+    0;
+}
+
+.doc-footer-values span {
+  grid-row:
+    span 2;
+
+  font-size:
+    25px;
+}
+
+.doc-footer-values b,
+.doc-footer-values small {
+  display:
+    block;
+}
+
+.doc-footer-values b {
+  color:
+    #12538a;
+
+  font-size:
+    12px;
+}
+
+.doc-footer-values small {
+  color:
+    #8093a4;
+
+  font-size:
+    9px;
+}
+
+
+/* =========================================================
+   BRAND FOOTER
+   ========================================================= */
+
+.doc-brand-footer {
+  display:
+    flex;
+
+  align-items:
+    center;
+
+  justify-content:
+    space-between;
+
+  gap:
+    20px;
+
+  margin-top:
+    14px;
+
+  padding:
+    15px 8px 5px;
+
+  color:
+    #ffffff;
+}
+
+.doc-brand-footer > div {
+  display:
+    flex;
+
+  flex-direction:
+    column;
+
+  gap:
+    2px;
+}
+
+.doc-brand-footer > div:last-child {
+  text-align:
+    right;
+}
+
+.doc-brand-footer b {
+  font-size:
+    12px;
+}
+
+.doc-brand-footer span {
+  font-size:
+    8px;
+
+  opacity:
+    .62;
+}
+
+
+/* =========================================================
+   DOKUMENTASI MOBILE
+   ========================================================= */
+
+@media screen and (max-width: 900px) {
+
+  #dokumentasiPage {
+    max-width:
+      100%;
+  }
+
+  .doc-service {
+    min-height:
+      auto;
+
+    margin-bottom:
+      14px;
+
+    border-radius:
+      22px;
+  }
+
+  .doc-hero {
+    display:
+      block;
+
+    min-height:
+      auto;
+  }
+
+  .doc-mascot {
+    width:
+      100%;
+
+    min-height:
+      260px;
+
+    height:
+      260px;
+
+    margin:
+      0;
+
+    align-items:
+      flex-end;
+  }
+
+  .doc-mascot img {
+    width:
+      310px;
+
+    height:
+      285px;
+
+    max-width:
+      none;
+  }
+
+  .doc-hero-content {
+    width:
+      100%;
+
+    max-width:
+      none;
+
+    padding:
+      0 18px 22px;
+
+    text-align:
+      center;
+  }
+
+  .doc-eyebrow {
+    margin-bottom:
+      11px;
+
+    font-size:
+      8px;
+  }
+
+  .doc-hero-content h1 {
+    font-size:
+      24px;
+
+    line-height:
+      1.16;
+
+    letter-spacing:
+      -.4px;
+  }
+
+  .doc-hero-content h1 span {
+    margin-top:
+      3px;
+  }
+
+  .doc-hero-content > p {
+    margin:
+      11px auto 13px;
+
+    max-width:
+      520px;
+
+    font-size:
+      10px;
+
+    line-height:
+      1.6;
+  }
+
+  .doc-service-title {
+    margin:
+      10px 0 12px;
+
+    font-size:
+      13px;
+  }
+
+  .doc-values {
+    grid-template-columns:
+      repeat(2, minmax(0,1fr));
+
+    gap:
+      7px;
+
+    max-width:
+      none;
+
+    text-align:
+      left;
+  }
+
+  .doc-value {
+    min-height:
+      54px;
+
+    padding:
+      8px;
+
+    gap:
+      8px;
+  }
+
+  .doc-value > span {
+    width:
+      30px;
+
+    height:
+      30px;
+
+    flex-basis:
+      30px;
+
+    font-size:
+      16px;
+  }
+
+  .doc-value b {
+    font-size:
+      10px;
+  }
+
+  .doc-value small {
+    font-size:
+      7px;
+  }
+
+  .doc-quote {
+    margin-top:
+      12px;
+
+    font-size:
+      11px;
+  }
+
+  .doc-main {
+    padding:
+      18px;
+
+    border-radius:
+      20px;
+  }
+
+  .doc-heading {
+    gap:
+      11px;
+
+    margin-bottom:
+      20px;
+  }
+
+  .doc-icon {
+    width:
+      48px;
+
+    height:
+      48px;
+
+    flex-basis:
+      48px;
+
+    border-radius:
+      14px;
+
+    font-size:
+      23px;
+  }
+
+  .doc-heading h2 {
+    font-size:
+      20px;
+  }
+
+  .doc-heading p {
+    font-size:
+      9px;
+  }
+
+  .doc-step {
+    margin-bottom:
+      18px;
+  }
+
+  .doc-step-title {
+    font-size:
+      13px;
+  }
+
+  .doc-step-title span {
+    width:
+      27px;
+
+    height:
+      27px;
+
+    font-size:
+      11px;
+  }
+
+  .doc-main select {
+    min-height:
+      51px;
+
+    font-size:
+      13px;
+  }
+
+  .doc-type-grid {
+    grid-template-columns:
+      1fr;
+
+    gap:
+      8px;
+  }
+
+  .doc-type {
+    min-height:
+      78px;
+
+    padding:
+      11px;
+  }
+
+  .doc-type > strong {
+    width:
+      44px;
+
+    height:
+      44px;
+
+    flex-basis:
+      44px;
+
+    font-size:
+      21px;
+  }
+
+  .doc-type b {
+    font-size:
+      12px;
+  }
+
+  .doc-type small {
+    font-size:
+      8px;
+  }
+
+  .doc-file-box {
+    align-items:
+      flex-start;
+
+    flex-direction:
+      column;
+
+    padding:
+      12px;
+  }
+
+  .doc-file-button {
+    width:
+      100%;
+
+    text-align:
+      center;
+  }
+
+  .doc-upload {
+    min-height:
+      53px;
+
+    font-size:
+      12px;
+  }
+
+  .doc-info {
+    font-size:
+      9px;
+  }
+
+  .doc-footer-values {
+    grid-template-columns:
+      1fr 1fr;
+
+    border-radius:
+      15px;
+  }
+
+  .doc-footer-values > div {
+    padding:
+      12px;
+
+    border-bottom:
+      1px solid #e4edf4;
+  }
+
+  .doc-footer-values > div:nth-child(2) {
+    border-right:
+      0;
+  }
+
+  .doc-footer-values span {
+    font-size:
+      22px;
+  }
+
+  .doc-footer-values b {
+    font-size:
+      10px;
+  }
+
+  .doc-footer-values small {
+    font-size:
+      8px;
+  }
+
+  .doc-brand-footer {
+    display:
+      block;
+
+    text-align:
+      center;
+
+    padding-top:
+      12px;
+  }
+
+  .doc-brand-footer > div:last-child {
+    margin-top:
+      8px;
+
+    text-align:
+      center;
+  }
+}
+
+
+/* =========================================================
+   DOKUMENTASI SMALL PHONE
+   ========================================================= */
+
+@media screen and (max-width: 390px) {
+
+  .doc-mascot {
+    min-height:
+      230px;
+
+    height:
+      230px;
+  }
+
+  .doc-mascot img {
+    width:
+      275px;
+
+    height:
+      255px;
+  }
+
+  .doc-hero-content h1 {
+    font-size:
+      21px;
+  }
+
+  .doc-hero-content > p {
+    font-size:
+      9px;
+  }
+
+  .doc-service-title {
+    font-size:
+      12px;
+  }
+
+  .doc-value b {
+    font-size:
+      9px;
+  }
+
+  .doc-value small {
+    font-size:
+      6.5px;
+  }
+}
+
+
+/* ==========================================================
+   SIPAULA KHD — KEGIATAN MOBILE FINAL
+   VISUAL ONLY — BACKEND / JAVASCRIPT TIDAK DISENTUH
+   ========================================================== */
+
+@media screen and (max-width: 650px) {
+
+  /* ========================================================
+     01. BACKGROUND MASTER MOBILE
+     Artwork mengisi seluruh area halaman Kegiatan.
+     ======================================================== */
+
+  #formPage {
+    position: relative !important;
+    min-height: 100% !important;
+    padding-bottom: 22px !important;
+
+    background-color: #07152f !important;
+
+    background-image:
+      url("https://raw.githubusercontent.com/patoa21-oss/Sipaula/c7f8d705aab1c49cab875c6a4c03c5cab94a6293/SIPAULA_BACKGROUND_MOBILE.webp") !important;
+
+    background-repeat: no-repeat !important;
+    background-position: center top !important;
+
+    /* Artwork GitHub tetap proporsional.
+       Area halaman yang lebih panjang diteruskan dengan
+       warna dasar navy, bukan dengan menarik gambar. */
+    background-size: 100% auto !important;
+
+    overflow: visible !important;
+  }
+
+  /* Matikan seluruh pseudo-layer background percobaan lama. */
+  #formPage::before {
+    display: none !important;
+    content: none !important;
+  }
+
+  /* ========================================================
+     02. TOMBOL KEMBALI
+     ======================================================== */
+
+  #formPage .back {
+    margin: 7px 10px 13px !important;
+    padding: 9px 14px !important;
+
+    border-radius: 12px !important;
+
+    background: rgba(3,35,75,.60) !important;
+    border: 1px solid rgba(86,210,255,.22) !important;
+
+    color: #e7f9ff !important;
+
+    font-size: 12px !important;
+    font-weight: 600 !important;
+
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+  }
+
+  /* ========================================================
+     03. FORM CARD
+     Glass dibuat lebih tipis supaya Background Master
+     benar-benar terlihat.
+     ======================================================== */
+
+  #formPage .form-card {
+    width: calc(100% - 20px) !important;
+    margin: 0 10px 18px !important;
+
+    padding: 19px 14px 20px !important;
+
+    border-radius: 22px !important;
+
+    background:
+      linear-gradient(
+        180deg,
+        rgba(3,54,115,.22),
+        rgba(3,39,91,.30)
+      ) !important;
+
+    border: 1px solid
+      rgba(104,220,255,.24) !important;
+
+    box-shadow:
+      0 16px 38px rgba(0,0,0,.18),
+      inset 0 1px 0
+      rgba(255,255,255,.09) !important;
+
+    /* Ini yang menghilangkan efek "membran" tebal. */
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+  }
+
+  /* ========================================================
+     04. JUDUL HALAMAN
+     ======================================================== */
+
+  #formPage .form-title {
+    margin-bottom: 6px !important;
+
+    font-size: 23px !important;
+    line-height: 1.2 !important;
+    font-weight: 800 !important;
+
+    color: #ffffff !important;
+
+    text-shadow:
+      0 2px 10px rgba(0,0,0,.32) !important;
+  }
+
+  /* Subtitle tepat di bawah "Kegiatan Baru". */
+  #formPage .form-card
+  > div[style*="margin-top"] {
+    margin-bottom: 18px !important;
+
+    color: rgba(232,247,255,.84) !important;
+
+    font-size: 11px !important;
+    line-height: 1.55 !important;
+  }
+
+  /* ========================================================
+     05. JUDUL SECTION
+     Menangkap beberapa kemungkinan class yang digunakan
+     tanpa mengubah struktur HTML.
+     ======================================================== */
+
+  #formPage .section-title,
+  #formPage .field-group-title,
+  #formPage .form-section-title,
+  #formPage .form-section > h3 {
+    margin-top: 20px !important;
+    margin-bottom: 9px !important;
+
+    color: #67e8f9 !important;
+
+    font-size: 15px !important;
+    line-height: 1.35 !important;
+
+    font-weight: 800 !important;
+    letter-spacing: .35px !important;
+
+    text-shadow:
+      0 1px 8px rgba(56,189,248,.18) !important;
+  }
+
+  /* ========================================================
+     06. FIELD
+     ======================================================== */
+
+  #formPage .field {
+    margin-bottom: 16px !important;
+  }
+
+  #formPage .field label {
+    display: block !important;
+
+    margin-bottom: 7px !important;
+
+    color: #ffffff !important;
+
+    font-size: 14px !important;
+    line-height: 1.4 !important;
+    font-weight: 700 !important;
+  }
+
+  /* ========================================================
+     07. INPUT / SELECT / TEXTAREA
+     ======================================================== */
+
+  #formPage .field input,
+  #formPage .field select,
+  #formPage .field textarea {
+
+    width: 100% !important;
+
+    min-height: 52px !important;
+
+    padding: 13px 14px !important;
+
+    border:
+      1px solid rgba(112,222,255,.27) !important;
+
+    border-radius: 14px !important;
+
+    outline: none !important;
+
+    background:
+      linear-gradient(
+        180deg,
+        rgba(4,66,132,.54),
+        rgba(2,43,92,.58)
+      ) !important;
+
+    color: #ffffff !important;
+
+    font-size: 16px !important;
+    line-height: 1.45 !important;
+
+    box-shadow:
+      inset 0 1px 2px rgba(0,0,0,.10),
+      0 4px 12px rgba(0,0,0,.08) !important;
+  }
+
+  #formPage .field input::placeholder,
+  #formPage .field textarea::placeholder {
+    color: rgba(225,242,255,.74) !important;
+    opacity: 1 !important;
+    font-size: 14px !important;
+  }
+
+  #formPage .field input:focus,
+  #formPage .field select:focus,
+  #formPage .field textarea:focus {
+    border-color:
+      rgba(56,211,255,.78) !important;
+
+    box-shadow:
+      0 0 0 3px rgba(56,211,255,.10),
+      0 7px 18px rgba(0,0,0,.10) !important;
+  }
+
+  #formPage .field textarea {
+    min-height: 104px !important;
+    resize: vertical !important;
+  }
+
+  #formPage .field select option {
+    background: #082746 !important;
+    color: #ffffff !important;
+  }
+
+  /* ========================================================
+     08. DUA KOLOM PESERTA / PANITIA / WAKTU
+     ======================================================== */
+
+  #formPage .two {
+    grid-template-columns:
+      repeat(2, minmax(0,1fr)) !important;
+
+    gap: 9px !important;
+  }
+
+  #formPage .two .field {
+    min-width: 0 !important;
+  }
+
+  /* ========================================================
+     09. TOMBOL SIMPAN KEGIATAN
+     Besar, jelas, tetapi tidak mengambil ruang berlebihan.
+     ======================================================== */
+
+  #formPage .form-card button[type="submit"],
+  #formPage .form-card .primary,
+  #formPage .form-card .btn-save,
+  #formPage .form-card .save-btn,
+  #formPage .form-card button[onclick*="simpan"],
+  #formPage .form-card button[onclick*="Simpan"] {
+
+    width: 100% !important;
+
+    height: 64px !important;
+    min-height: 64px !important;
+
+    margin-top: 10px !important;
+    margin-bottom: 4px !important;
+
+    padding: 0 18px !important;
+
+    border:
+      1px solid rgba(145,238,255,.55) !important;
+
+    border-radius: 18px !important;
+
+    background:
+      linear-gradient(
+        100deg,
+        #16d9ff 0%,
+        #079cf4 52%,
+        #0875ee 100%
+      ) !important;
+
+    color: #ffffff !important;
+
+    font-size: 17px !important;
+    font-weight: 800 !important;
+
+    letter-spacing: .25px !important;
+
+    box-shadow:
+      0 10px 25px rgba(0,174,255,.28),
+      inset 0 2px 0
+      rgba(255,255,255,.25) !important;
+
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    cursor: pointer !important;
+  }
+
+  #formPage .form-card button[type="submit"]:active,
+  #formPage .form-card .primary:active,
+  #formPage .form-card .btn-save:active,
+  #formPage .form-card .save-btn:active {
+    transform: scale(.985) !important;
+  }
+
+  /* ========================================================
+     10. AREA BAWAH TOMBOL
+     Mengisi transisi menuju artwork/footer.
+     ======================================================== */
+
+  /* Tidak menambahkan bar/pseudo-footer baru.
+     Footer asli halaman tetap digunakan. */
+  #formPage .form-card::after {
+    content: none !important;
+    display: none !important;
+  }
+
+  /* ========================================================
+     11. JARAK BAWAH HALAMAN
+     ======================================================== */
+
+  #formPage {
+    padding-bottom: 22px !important;
+  }
+}
+
+
+/* ==========================================================
+   SIPAULA KHD — EXTRA SMALL PHONE
+   ========================================================== */
+
+@media screen and (max-width: 390px) {
+
+  #formPage .form-card {
+    width: calc(100% - 16px) !important;
+    margin-left: 8px !important;
+    margin-right: 8px !important;
+
+    padding-left: 13px !important;
+    padding-right: 13px !important;
+  }
+
+  #formPage .form-title {
+    font-size: 22px !important;
+  }
+
+  #formPage .field label {
+    font-size: 13px !important;
+  }
+
+  #formPage .section-title,
+  #formPage .field-group-title,
+  #formPage .form-section-title,
+  #formPage .form-section > h3 {
+    font-size: 14px !important;
+  }
+
+  #formPage .form-card button[type="submit"],
+  #formPage .form-card .primary,
+  #formPage .form-card .btn-save,
+  #formPage .form-card .save-btn {
+    height: 62px !important;
+    min-height: 62px !important;
+    font-size: 16px !important;
+  }
+}
+/* =========================================================
+   SIPAULA V3.1 — FIX INTERAKSI MENU DASHBOARD
+   ========================================================= */
+
+.home-menu {
+  position: relative;
+  z-index: 20;
+  pointer-events: auto;
+}
+
+.home-menu-item {
+  position: relative;
+  z-index: 21;
+  pointer-events: auto !important;
+  cursor: pointer;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.home-menu-item::before,
+.home-menu-item::after {
+  pointer-events: none !important;
+}
+
+.home-menu-item > * {
+  pointer-events: none;
+}
+
+/* Jangan biarkan dekorasi/background menangkap klik */
+.page::before,
+.page::after,
+.home-menu::before,
+.home-menu::after {
+  pointer-events: none !important;
+}
+
+/* Feedback interaksi */
+.home-menu-item {
+  transition:
+    transform .18s ease,
+    border-color .18s ease,
+    background .18s ease,
+    box-shadow .18s ease;
+}
+
+.home-menu-item:hover {
+  transform: translateY(-2px);
+}
+
+.home-menu-item:active {
+  transform: translateY(0);
+}
+/* =========================================================
+   SIPAULA KHD — PC
+   HILANGKAN MEMBRAN PADA WADAH FORM KEGIATAN
+   Input tetap memiliki membran sendiri.
+   ========================================================= */
+
+@media screen and (min-width: 651px) {
+
+  #formPage .form-card {
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+
+    border-radius: 0 !important;
+  }
+
+  /* Judul dan tulisan tetap bersih di atas background */
+  #formPage .form-title,
+  #formPage .section-title,
+  #formPage .field-group-title,
+  #formPage .form-section-title,
+  #formPage .form-section > h3 {
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+  }
+
+}
+/* =========================================================
+   SIPAULA V3 — DESKTOP FULL SCREEN FINAL
+   VISUAL ONLY — BACKEND TIDAK DISENTUH
+   ========================================================= */
+
+@media screen and (min-width: 1101px) {
+
+  html,
+  body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden !important;
+  }
+
+  #dashboardPage {
+    width: 100% !important;
+    max-width: none !important;
+    min-height: 100dvh !important;
+    height: 100dvh !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: hidden !important;
+  }
+
+  .sip-home {
+    width: 100% !important;
+    max-width: none !important;
+    min-height: 100dvh !important;
+    height: 100dvh !important;
+
+    margin: 0 !important;
+
+    padding:
+      18px
+      clamp(24px, 2.5vw, 44px)
+      16px !important;
+
+    border-radius: 0 !important;
+
+    overflow: hidden !important;
+  }
+
+  .sip-header {
+    min-height: 58px !important;
+  }
+
+  .sip-hero {
+    height: clamp(230px, 29vh, 310px) !important;
+    margin-bottom: 10px !important;
+  }
+
+  .sip-stats {
+    gap: 10px !important;
+    margin-bottom: 10px !important;
+  }
+
+  .sip-stat {
+    min-height: 78px !important;
+    padding: 12px 16px !important;
+  }
+
+  .sip-content {
+    gap: 10px !important;
+  }
+
+  .sip-panel {
+    padding: 13px !important;
+  }
+
+  .sip-menu-card {
+    min-height: 72px !important;
+  }
+
+  .sip-photo-frame {
+    height: 170px !important;
+  }
+
+  .sip-footer {
+    margin-top: 8px !important;
+  }
+}
+/* ==========================================================
+   SIPAULA HOME — BACKGROUND MASTER FINAL
+   Background dari Google Drive
+   ========================================================== */
+
+#dashboardPage {
+  width: 100% !important;
+  max-width: none !important;
+  min-height: 100vh !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.sip-home {
+  position: relative !important;
+  width: 100% !important;
+  max-width: none !important;
+  min-height: 100vh !important;
+
+  margin: 0 !important;
+  padding: 18px clamp(18px, 3vw, 52px) 22px !important;
+
+  border-radius: 0 !important;
+
+  background-color: #061a34 !important;
+  background-repeat: no-repeat !important;
+  background-position: center top !important;
+  background-size: cover !important;
+
+  overflow: hidden !important;
+}
+
+/* MATIKAN MEMBRAN / MOTIF LAMA */
+.sip-home::before,
+.sip-home::after,
+.sip-hero-bg {
+  display: none !important;
+  content: none !important;
+}
+
+/* HERO JADI LEBIH TRANSPARAN */
+.sip-hero {
+  background:
+    linear-gradient(
+      90deg,
+      rgba(3,34,67,.72),
+      rgba(5,69,110,.38)
+    ) !important;
+
+  border: 1px solid rgba(80,210,255,.28) !important;
+}
+
+/* PANEL JANGAN MENUTUP BACKGROUND */
+.sip-panel {
+  background:
+    linear-gradient(
+      145deg,
+      rgba(5,55,91,.58),
+      rgba(3,35,63,.48)
+    ) !important;
+
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+
+/* STATISTIK LEBIH RINGAN */
+.sip-stat {
+  background:
+    linear-gradient(
+      135deg,
+      rgba(13,82,128,.60),
+      rgba(5,44,73,.58)
+    ) !important;
+}
+
+/* MENU */
+.sip-menu-card {
+  background:
+    linear-gradient(
+      135deg,
+      rgba(18,91,138,.55),
+      rgba(5,52,84,.58)
+    ) !important;
+}
+
+/* DOKUMENTASI */
+.sip-photo-frame {
+  background:
+    rgba(2,25,45,.48) !important;
+}
+
+/* FOOTER */
+.sip-footer {
+  color: rgba(255,255,255,.55) !important;
+}
+/* =========================================================
+   SIPAULA V3 — DESKTOP IMMERSIVE / FULL VIEW
+   FIX BERANDA
+   Visual ONLY — backend tidak disentuh
+   ========================================================= */
+
+@media screen and (min-width: 1101px) {
+
+  html,
+  body {
+    width: 100%;
+    height: 100%;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: hidden !important;
+  }
+
+  /* HILANGKAN MARGIN LUAR APLIKASI */
+  .app {
+    width: 100vw !important;
+    height: 100dvh !important;
+    min-height: 100dvh !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: hidden !important;
+  }
+
+  /* HALAMAN BERANDA */
+  #dashboardPage {
+    position: relative !important;
+    width: 100vw !important;
+    height: 100dvh !important;
+    min-height: 100dvh !important;
+    max-width: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: hidden !important;
+  }
+
+  /* BACKGROUND MASTER MEMENUHI LAYAR */
+  #dashboardPage .sip-home {
+    position: relative !important;
+    width: 100vw !important;
+    height: 100dvh !important;
+    min-height: 100dvh !important;
+    max-width: none !important;
+
+    margin: 0 !important;
+
+    padding:
+      14px
+      clamp(22px, 4vw, 64px)
+      12px !important;
+
+    border-radius: 0 !important;
+
+    overflow: hidden !important;
+  }
+
+  /* HEADER DIPADATKAN */
+  #dashboardPage .sip-header {
+    min-height: 48px !important;
+    height: 48px !important;
+    margin-bottom: 8px !important;
+  }
+
+  /* HERO — LEBIH PROPORSIONAL */
+  #dashboardPage .sip-hero {
+    height: clamp(205px, 27vh, 270px) !important;
+    min-height: 0 !important;
+    margin-bottom: 8px !important;
+  }
+
+  /* STATISTIK */
+  #dashboardPage .sip-stats {
+    gap: 8px !important;
+    margin-bottom: 8px !important;
+  }
+
+  #dashboardPage .sip-stat {
+    min-height: 68px !important;
+    height: 68px !important;
+    padding: 10px 14px !important;
+  }
+
+  /* KONTEN BAWAH */
+  #dashboardPage .sip-content {
+    gap: 8px !important;
+  }
+
+  #dashboardPage .sip-panel {
+    padding: 11px !important;
+  }
+
+  /* MENU */
+  #dashboardPage .sip-menu-card {
+    min-height: 64px !important;
+  }
+
+  /* DOKUMENTASI */
+  #dashboardPage .sip-photo-frame {
+    height: 135px !important;
+  }
+
+  /* FOOTER */
+  #dashboardPage .sip-footer {
+    margin-top: 5px !important;
+  }
+}
+/* =========================================================
+   SIPAULA V3 — DESKTOP FULLSCREEN COMPOSITION FINAL
+   VISUAL ONLY — BACKEND TIDAK DISENTUH
+   ========================================================= */
+
+@media screen and (min-width: 1101px) {
+
+  html,
+  body {
+    width: 100%;
+    height: 100%;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: hidden !important;
+  }
+
+  .app {
+    width: 100vw !important;
+    height: 100dvh !important;
+    min-height: 100dvh !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: hidden !important;
+  }
+
+  #dashboardPage {
+    width: 100vw !important;
+    height: 100dvh !important;
+    min-height: 100dvh !important;
+    max-width: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: hidden !important;
+  }
+
+  /* =====================================================
+     HOME
+     ===================================================== */
+
+  #dashboardPage .sip-home {
+    width: 100vw !important;
+    height: 100dvh !important;
+    min-height: 100dvh !important;
+    max-width: none !important;
+
+    margin: 0 !important;
+
+    padding:
+      12px
+      clamp(28px, 4vw, 64px)
+      10px !important;
+
+    border-radius: 0 !important;
+
+    overflow: hidden !important;
+
+    box-sizing: border-box !important;
+  }
+
+  /* =====================================================
+     HEADER
+     ===================================================== */
+
+  #dashboardPage .sip-header {
+    height: 52px !important;
+    min-height: 52px !important;
+    margin-bottom: 8px !important;
+  }
+
+  /* =====================================================
+     HERO
+     ===================================================== */
+
+  #dashboardPage .sip-hero {
+
+    height: 30vh !important;
+    min-height: 245px !important;
+    max-height: 300px !important;
+
+    margin-bottom: 8px !important;
+
+    overflow: hidden !important;
+
+    box-sizing: border-box !important;
+  }
+
+  /* JANGAN BIARKAN ISI HERO TERPOTONG */
+  #dashboardPage .sip-hero > * {
+    box-sizing: border-box !important;
+  }
+
+  /* =====================================================
+     STAT
+     ===================================================== */
+
+  #dashboardPage .sip-stats {
+    height: 70px !important;
+    min-height: 70px !important;
+
+    gap: 8px !important;
+    margin-bottom: 8px !important;
+  }
+
+  #dashboardPage .sip-stat {
+    height: 70px !important;
+    min-height: 70px !important;
+
+    padding: 10px 14px !important;
+
+    box-sizing: border-box !important;
+  }
+
+  /* =====================================================
+     CONTENT
+     ===================================================== */
+
+  #dashboardPage .sip-content {
+    gap: 8px !important;
+  }
+
+  #dashboardPage .sip-panel {
+    padding: 11px !important;
+    box-sizing: border-box !important;
+  }
+
+  /* =====================================================
+     MENU
+     ===================================================== */
+
+  #dashboardPage .sip-menu-card {
+    min-height: 64px !important;
+    height: 64px !important;
+  }
+
+  /* =====================================================
+     DOKUMENTASI
+     ===================================================== */
+
+  #dashboardPage .sip-photo-frame {
+    height: 135px !important;
+    min-height: 135px !important;
+  }
+
+  /* =====================================================
+     FOOTER
+     ===================================================== */
+
+  #dashboardPage .sip-footer {
+    margin-top: 5px !important;
+  }
+}
